@@ -7,7 +7,6 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.xw.lib_common.R
 import com.xw.lib_common.ext.getColor
-import com.xw.lib_common.ext.getDrawable
 import com.xw.lib_common.utils.AnimationUtils
 
 /**

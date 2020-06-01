@@ -47,7 +47,7 @@ dependencies {
 
     api "com.google.android.material:material:$rootProject.materialVersion"
     api "com.google.code.gson:gson:$rootProject.gsonVersion"
-    api "com.android.support:multidex:$rootProject.multidex"
+    api "androidx.multidex:multidex:$rootProject.multidex"
 
     api "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha03"
 

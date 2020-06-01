@@ -1,9 +1,6 @@
 apply plugin: 'com.android.library'
-
-apply plugin: 'kotlin-kapt'
-
 apply plugin: 'kotlin-android'
-
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -53,7 +50,7 @@ dependencies {
 
     api project(path: ':lib_opensource')
     api project(path: ':lib_lang')
-    implementation 'com.android.support:multidex:1.0.3'
+    implementation "androidx.multidex:multidex:2.0.1"
     androidTestImplementation "androidx.work:work-testing:$rootProject.workVersion"
 
 }

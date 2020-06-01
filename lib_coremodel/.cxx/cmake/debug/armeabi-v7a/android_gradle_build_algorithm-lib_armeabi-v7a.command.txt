@@ -1,7 +1,7 @@
-Executable : /Users/xingwei/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja
+Executable : C:\Users\Administrator\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
 arguments : 
 -C
-/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx/cmake/debug/armeabi-v7a
+D:\Jetpack\XCloudMusic\lib_coremodel\.cxx\cmake\debug\armeabi-v7a
 algorithm-lib
 jvmArgs : 
 

@@ -1,70 +1,205 @@
 {
-  "variant": {
-    "module": {
-      "rootBuildGradleFolder": "/Users/xingwei/works/demo/XCloudMusic",
-      "sdkFolder": "/Users/xingwei/Library/Android/sdk",
-      "isNativeCompilerSettingsCacheEnabled": false,
-      "isBuildOnlyTargetAbiEnabled": true,
-      "ideBuildTargetAbi": "x86",
-      "splitsAbiFilterSet": [],
-      "intermediatesFolder": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/build/intermediates",
-      "gradleModulePathName": ":lib_coremodel",
-      "moduleRootFolder": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel",
-      "makeFile": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/src/main/cpp/CMakeLists.txt",
-      "buildSystem": "CMAKE",
-      "compilerSettingsCacheFolder": "/Users/xingwei/works/demo/XCloudMusic/.cxx",
-      "cxxFolder": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx",
-      "ndkFolder": "/Users/xingwei/Library/Android/sdk/ndk-bundle",
-      "ndkVersion": "20.0.5594570",
-      "ndkSupportedAbiList": [
-        "ARMEABI_V7A",
-        "ARM64_V8A",
-        "X86",
-        "X86_64"
+  "abi": "X86",
+  "abiPlatformVersion": 19,
+  "buildSettings": {
+    "environmentVariables": []
+  },
+  "cmake": {
+    "cmakeArtifactsBaseFolder": "D:\\Jetpack\\XCloudMusic\\lib_coremodel\\.cxx\\cmake\\debug\\x86",
+    "cmakeServerLogFile": "D:\\Jetpack\\XCloudMusic\\lib_coremodel\\.cxx\\cmake\\debug\\x86\\cmake_server_log.txt",
+    "cmakeWrappingBaseFolder": "D:\\Jetpack\\XCloudMusic\\lib_coremodel\\.cxx\\cxx\\debug\\x86",
+    "effectiveConfiguration": {
+      "name": "traditional-android-studio-cmake-environment",
+      "description": "Composite reified CMakeSettings configuration",
+      "generator": "Ninja",
+      "inheritEnvironments": [
+        "ndk"
       ],
+      "buildRoot": "D:\\Jetpack\\XCloudMusic\\lib_coremodel\\.cxx\\cmake\\debug\\x86",
+      "cmakeToolchain": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
+      "cmakeExecutable": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
+      "variables": [
+        {
+          "name": "CMAKE_FIND_ROOT_PATH",
+          "value": "D:\\Jetpack\\XCloudMusic\\lib_coremodel\\.cxx\\cmake\\debug\\prefab\\x86\\prefab"
+        },
+        {
+          "name": "CMAKE_BUILD_TYPE",
+          "value": "Debug"
+        },
+        {
+          "name": "CMAKE_TOOLCHAIN_FILE",
+          "value": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake"
+        },
+        {
+          "name": "ANDROID_ABI",
+          "value": "x86"
+        },
+        {
+          "name": "ANDROID_NDK",
+          "value": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669"
+        },
+        {
+          "name": "ANDROID_PLATFORM",
+          "value": "android-19"
+        },
+        {
+          "name": "CMAKE_ANDROID_ARCH_ABI",
+          "value": "x86"
+        },
+        {
+          "name": "CMAKE_ANDROID_NDK",
+          "value": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669"
+        },
+        {
+          "name": "CMAKE_EXPORT_COMPILE_COMMANDS",
+          "value": "ON"
+        },
+        {
+          "name": "CMAKE_LIBRARY_OUTPUT_DIRECTORY",
+          "value": "D:\\Jetpack\\XCloudMusic\\lib_coremodel\\build\\intermediates\\cmake\\debug\\obj\\x86"
+        },
+        {
+          "name": "CMAKE_MAKE_PROGRAM",
+          "value": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
+        },
+        {
+          "name": "CMAKE_SYSTEM_NAME",
+          "value": "Android"
+        },
+        {
+          "name": "CMAKE_SYSTEM_VERSION",
+          "value": "19"
+        }
+      ]
+    }
+  },
+  "cxxBuildFolder": "D:\\Jetpack\\XCloudMusic\\lib_coremodel\\.cxx\\cmake\\debug\\x86",
+  "info": {
+    "abi": "X86",
+    "bitness": 32,
+    "deprecated": false,
+    "default": true
+  },
+  "originalCxxBuildFolder": "D:\\Jetpack\\XCloudMusic\\lib_coremodel\\.cxx\\cmake\\debug\\x86",
+  "variant": {
+    "buildSystemArgumentList": [],
+    "buildTargetSet": [],
+    "cFlagsList": [],
+    "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
+    "cppFlagsList": [
+      ""
+    ],
+    "isDebuggableEnabled": true,
+    "module": {
+      "buildSystem": "CMAKE",
+      "cmake": {
+        "cmakeExe": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
+        "minimumCmakeVersion": "3.10.2",
+        "ninjaExe": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
+      },
+      "cmakeToolchainFile": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
+      "cxxFolder": "D:\\Jetpack\\XCloudMusic\\lib_coremodel\\.cxx",
+      "gradleModulePathName": ":lib_coremodel",
+      "intermediatesFolder": "D:\\Jetpack\\XCloudMusic\\lib_coremodel\\build\\intermediates",
+      "makeFile": "D:\\Jetpack\\XCloudMusic\\lib_coremodel\\src\\main\\cpp\\CMakeLists.txt",
+      "moduleBuildFile": "D:\\Jetpack\\XCloudMusic\\lib_coremodel\\build.gradle",
+      "moduleRootFolder": "D:\\Jetpack\\XCloudMusic\\lib_coremodel",
       "ndkDefaultAbiList": [
         "ARMEABI_V7A",
         "ARM64_V8A",
         "X86",
         "X86_64"
       ],
-      "cmakeToolchainFile": "."
+      "ndkFolder": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669",
+      "ndkMetaAbiList": [
+        {
+          "abi": "ARMEABI_V7A",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "ARM64_V8A",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86_64",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        }
+      ],
+      "ndkMetaPlatforms": {
+        "min": 16,
+        "max": 29,
+        "aliases": {
+          "20": 19,
+          "25": 24,
+          "J": 16,
+          "J-MR1": 17,
+          "J-MR2": 18,
+          "K": 19,
+          "L": 21,
+          "L-MR1": 22,
+          "M": 23,
+          "N": 24,
+          "N-MR1": 24,
+          "O": 26,
+          "O-MR1": 27,
+          "P": 28,
+          "Q": 29
+        }
+      },
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultStl": "LIBCXX_STATIC",
+      "ndkVersion": "21.0.6113669",
+      "project": {
+        "compilerSettingsCacheFolder": "D:\\Jetpack\\XCloudMusic\\.cxx",
+        "cxxFolder": "D:\\Jetpack\\XCloudMusic\\.cxx",
+        "isBuildOnlyTargetAbiEnabled": true,
+        "isCmakeBuildCohabitationEnabled": false,
+        "isNativeCompilerSettingsCacheEnabled": false,
+        "rootBuildGradleFolder": "D:\\Jetpack\\XCloudMusic",
+        "sdkFolder": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk",
+        "isPrefabEnabled": false
+      },
+      "splitsAbiFilterSet": [],
+      "stlSharedObjectMap": {
+        "LIBCXX_SHARED": {
+          "ARMEABI_V7A": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\arm-linux-androideabi\\libc++_shared.so",
+          "ARM64_V8A": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\aarch64-linux-android\\libc++_shared.so",
+          "X86": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\i686-linux-android\\libc++_shared.so",
+          "X86_64": "C:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\x86_64-linux-android\\libc++_shared.so"
+        },
+        "LIBCXX_STATIC": {},
+        "NONE": {},
+        "SYSTEM": {}
+      }
     },
-    "buildSystemArgumentList": [],
-    "cFlagList": [],
-    "cppFlagsList": [
-      ""
-    ],
+    "objFolder": "D:\\Jetpack\\XCloudMusic\\lib_coremodel\\build\\intermediates\\cmake\\debug\\obj",
     "variantName": "debug",
-    "soFolder": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/build/intermediates/cmake/debug/lib",
-    "objFolder": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/build/intermediates/cmake/debug/obj",
-    "jsonFolder": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx/cmake/debug",
-    "gradleBuildOutputFolder": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx/cxx/debug",
-    "isDebuggableEnabled": true,
     "validAbiList": [
-      "X86"
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
     ],
-    "buildTargetSet": []
+    "prefabDirectory": "D:\\Jetpack\\XCloudMusic\\lib_coremodel\\.cxx\\cmake\\debug\\prefab",
+    "prefabPackageDirectoryList": []
   },
-  "abi": "X86",
-  "abiPlatformVersion": 19,
-  "cxxBuildFolder": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx/cmake/debug/x86",
-  "jsonFile": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx/cmake/debug/x86/android_gradle_build.json",
-  "gradleBuildOutputFolder": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx/cxx/debug/x86",
-  "objFolder": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/build/intermediates/cmake/debug/obj/x86",
-  "buildCommandFile": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx/cmake/debug/x86/build_command.txt",
-  "buildOutputFile": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx/cmake/debug/x86/build_output.txt",
-  "modelOutputFile": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx/cmake/debug/x86/build_model.json",
-  "cmake": {
-    "cmakeListsWrapperFile": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx/cxx/debug/x86/CMakeLists.txt",
-    "toolchainWrapperFile": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx/cxx/debug/x86/android_gradle_build.toolchain.cmake",
-    "buildGenerationStateFile": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx/cxx/debug/x86/build_generation_state.json",
-    "cacheKeyFile": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx/cxx/debug/x86/compiler_cache_key.json",
-    "compilerCacheUseFile": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx/cxx/debug/x86/compiler_cache_use.json",
-    "compilerCacheWriteFile": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx/cxx/debug/x86/compiler_cache_write.json",
-    "toolchainSettingsFromCacheFile": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx/cxx/debug/x86/compiler_settings_cache.cmake",
-    "cmakeWrappingBaseFolder": "."
-  },
-  "jsonGenerationLoggingRecordFile": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx/cmake/debug/x86/json_generation_record.json",
-  "compileCommandsJsonFile": "/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx/cmake/debug/x86/compile_commands.json"
+  "prefabFolder": "D:\\Jetpack\\XCloudMusic\\lib_coremodel\\.cxx\\cmake\\debug\\prefab\\x86"
 }

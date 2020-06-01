@@ -159,7 +159,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(),
         return when (item.itemId) {
             R.id.action_search -> {
                 toast("待完成...")
-//                RouterPath.module_search.PATH_SEARCH.navigation()
+                RouterPath.module_search.PATH_SEARCH.navigation()
                 true
             }
             else -> super.onOptionsItemSelected(item)

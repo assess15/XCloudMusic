@@ -1,2 +1,0 @@
-ninja: Entering directory `/Users/xingwei/works/demo/XCloudMusic/lib_coremodel/.cxx/cmake/debug/x86'
-ninja: no work to do.

@@ -20,7 +20,7 @@ import retrofit2.http.*
  */
 interface MusicService {
     companion object {
-        const val BASE_URL = "http://192.168.1.14:3000"
+        const val BASE_URL = "http://192.168.101.26:3000"
 //        const val BASE_URL = "http://172.20.10.6:3000"
 //        const val BASE_URL = "http://192.168.16.15:3000"
 //        const val BASE_URL = "http://194.168.1.102:3000"

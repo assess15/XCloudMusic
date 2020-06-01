@@ -35,7 +35,7 @@ buildscript {
         truthVersion = '0.42'
         testExtJunit = '1.1.0'
         uiAutomatorVersion = '2.2.0'
-        multidex = '1.0.3'
+        multidex = '2.0.1'
         workVersion = '2.2.0'
         kodein = '6.0.1'
         leakcanary = '2.0-alpha-2'
@@ -62,7 +62,7 @@ buildscript {
 
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'com.android.tools.build:gradle:4.0.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
         // NOTE: Do not place your application dependencies here; they belong
