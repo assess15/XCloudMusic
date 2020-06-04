@@ -6,7 +6,6 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
 
-
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 28
@@ -35,22 +34,17 @@ android {
         }
     }
 
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
+    kotlinOptions {jvmTarget = "1.8"}
 }
 
 androidExtensions {
     experimental = true
 }
 
-
 dependencies {
-    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
-
+    kapt "androidx.room:room-compiler:2.2.5"
     api project(path: ':lib_opensource')
     api project(path: ':lib_lang')
     implementation "androidx.multidex:multidex:2.0.1"
-    androidTestImplementation "androidx.work:work-testing:$rootProject.workVersion"
-
+    androidTestImplementation "androidx.work:work-testing:2.3.4"
 }

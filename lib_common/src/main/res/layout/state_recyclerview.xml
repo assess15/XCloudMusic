@@ -11,7 +11,7 @@
             android:overScrollMode="never"
             android:visibility="visible" />
 
-    <com.xw.lib_opensource.recyclerview.MusicLoadingView
+    <com.xw.lib_common.view.recyclerview.MusicLoadingView
             android:id="@+id/loadingView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

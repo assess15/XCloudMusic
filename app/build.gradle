@@ -1,11 +1,7 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
-
 apply plugin: 'kotlin-kapt'
-
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 android {
@@ -30,14 +26,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    // work-runtime-ktx 2.1.0 and above now requires Java 8
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
 
-    dataBinding {
-        enabled = true
-    }
+    buildFeatures { dataBinding = true }
+    kotlinOptions { jvmTarget = "1.8" }
 }
 
 dependencies {

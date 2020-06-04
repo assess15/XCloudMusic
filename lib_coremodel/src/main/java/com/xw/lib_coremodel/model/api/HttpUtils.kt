@@ -62,7 +62,7 @@ class HttpUtils {
     private class RequestExtraParamsInterceptor : Interceptor {
         override fun intercept(chain: Interceptor.Chain): Response {
             val request = chain.request()
-            val builder = when (request.method()) {
+            val builder = when (request.method) {
                 "POST" -> {
                     addDefaultParameterToBody(request)
                 }
@@ -78,14 +78,14 @@ class HttpUtils {
             val newRequestBody: RequestBody
             val userId = PreferencesUtility.getInstance(CoreApplication.CONTEXT).getUserId()
 
-            newRequestBody = if (request.body() != null) {
+            newRequestBody = if (request.body != null) {
                 val baos = ByteArrayOutputStream()
                 val sink: Sink = baos.sink()
                 val bufferedSink: BufferedSink = sink.buffer()
-                request.body()!!.writeTo(bufferedSink)
+                request.body!!.writeTo(bufferedSink)
                 bufferedSink.writeString("&uid=$userId", Charset.defaultCharset())
                 RequestBody.create(
-                    request.body()!!.contentType(),
+                    request.body!!.contentType(),
                     bufferedSink.buffer.readUtf8()
                 )
             } else {
@@ -136,7 +136,7 @@ class HttpUtils {
     }
 
     private inner class MyCookieJar : CookieJar {
-        override fun saveFromResponse(url: HttpUrl, cookies: MutableList<Cookie>) {
+        override fun saveFromResponse(url: HttpUrl, cookies: List<Cookie>) {
             if (cookies.isNullOrEmpty().not()) {
                 val storage = mutableListOf<Cookie>()
                 storage.addAll(cookies)

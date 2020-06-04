@@ -1,3 +1,0 @@
-D:/Jetpack/XCloudMusic/lib_coremodel/.cxx/cmake/debug/x86_64/CMakeFiles/algorithm-lib.dir
-D:/Jetpack/XCloudMusic/lib_coremodel/.cxx/cmake/debug/x86_64/CMakeFiles/edit_cache.dir
-D:/Jetpack/XCloudMusic/lib_coremodel/.cxx/cmake/debug/x86_64/CMakeFiles/rebuild_cache.dir

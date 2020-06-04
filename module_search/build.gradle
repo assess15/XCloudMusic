@@ -51,22 +51,12 @@ android {
         }
     }
 
-    dataBinding {
-        enabled = true
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-
-
+    buildFeatures { dataBinding = true }
+    kotlinOptions {jvmTarget = "1.8"}
 }
 
 dependencies {
-
     api project(path: ':lib_common')
-    //ARouter
-    kapt "com.alibaba:arouter-compiler:$arouterCompiler"
-    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
-
+    kapt "com.alibaba:arouter-compiler:1.2.2"
+    kapt "androidx.room:room-compiler:2.1.0"
 }

@@ -21,7 +21,6 @@ import android.os.*
 import android.os.Build.VERSION_CODES.LOLLIPOP
 import android.provider.MediaStore
 import android.text.TextUtils
-import android.util.Log
 import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
 import com.bumptech.glide.request.target.CustomTarget
@@ -31,7 +30,10 @@ import com.orhanobut.logger.Logger
 import com.xw.lib_common.MediaAidlInterface
 import com.xw.lib_common.R
 import com.xw.lib_common.base.BaseApplication
-import com.xw.lib_common.ext.*
+import com.xw.lib_common.ext.checkPermission
+import com.xw.lib_common.ext.fromL
+import com.xw.lib_common.ext.fromM
+import com.xw.lib_common.ext.fromO
 import com.xw.lib_common.proxy.utils.MediaPlayerProxy
 import com.xw.lib_common.receiver.MediaButtonIntentReceiver
 import com.xw.lib_common.utils.GlideApp
@@ -44,8 +46,9 @@ import com.xw.lib_coremodel.model.bean.info.MusicInfo
 import com.xw.lib_coremodel.model.repository.PlayServiceRepository
 import com.xw.lib_coremodel.utils.PreferencesUtility
 import kotlinx.coroutines.*
-import leakcanary.internal.getBytes
-import java.io.*
+import java.io.File
+import java.io.IOException
+import java.io.RandomAccessFile
 import java.lang.ref.WeakReference
 import java.util.*
 import kotlin.collections.HashMap
@@ -135,6 +138,7 @@ class MediaService : Service() {
     private val mNotificationId = 1000
     private var mProxy: MediaPlayerProxy? = null
     private lateinit var mUrlHandler: Handler
+
     //    private lateinit var mLrcHandler: Handler
     private var mIsSending = false
 
@@ -267,7 +271,7 @@ class MediaService : Service() {
         mAlarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
         reloadQueueAfterPermissionCheck()
-        if (fromO()){
+        if (fromO()) {
             startForeground(mNotificationId, getNotification())
         }
     }
@@ -809,7 +813,7 @@ class MediaService : Service() {
                     RandomAccessFile(
                         File(filesDir.absolutePath + "playlist"),
                         "rws"
-                    ).write(temp.getBytes())
+                    ).write(temp.toByteArray())
                 } catch (e: Exception) {
                     Logger.e(e.toString())
                 }
@@ -1655,7 +1659,11 @@ class MediaService : Service() {
                 url = PreferencesUtility.getInstance(this@MediaService).getPlayLink(id)
                 if (url.isNullOrEmpty()) {
                     val urlData =
-                        withContext(Dispatchers.IO) { PlayServiceRepository(baseContext).getPlayUrl(id.toString()) }
+                        withContext(Dispatchers.IO) {
+                            PlayServiceRepository(baseContext).getPlayUrl(
+                                id.toString()
+                            )
+                        }
                     url = urlData.data[0].url
                     PreferencesUtility.getInstance(this@MediaService).setPlayLink(id, url)
                 }
@@ -2494,6 +2502,7 @@ class MediaService : Service() {
         const val LAST = 3
         const val SHUFFLE_NONE = 0
         const val SHUFFLE_NORMAL = 1
+
         //        const val SHUFFLE_AUTO = 2
         const val REPEAT_NONE = 2
         const val REPEAT_CURRENT = 1

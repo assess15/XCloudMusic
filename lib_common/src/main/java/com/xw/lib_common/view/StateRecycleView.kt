@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.*
 import com.xw.lib_common.R
 import com.xw.lib_common.base.view.activity.BaseBindingActivity
 import com.xw.lib_common.ext.*
-import com.xw.lib_opensource.recyclerview.MusicLoadingView
+import com.xw.lib_common.view.recyclerview.MusicLoadingView
 
 /**
  * @author: xingwei

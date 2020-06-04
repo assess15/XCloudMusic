@@ -58,19 +58,13 @@ android {
         }
     }
 
-    dataBinding {
-        enabled = true
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-
+    buildFeatures { dataBinding = true }
+    kotlinOptions {jvmTarget = "1.8"}
 }
 
 dependencies {
     api project(path: ':lib_common')
-    kapt "com.alibaba:arouter-compiler:$arouterCompiler"
+    kapt "com.alibaba:arouter-compiler:1.2.2"
     if (!isModule.toBoolean()){
         implementation project(path: ':module_login')
     }
