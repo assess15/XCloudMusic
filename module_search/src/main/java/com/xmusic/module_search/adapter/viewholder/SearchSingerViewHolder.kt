@@ -7,7 +7,6 @@ import com.xmusic.module_search.utils.blackColor
 import com.xmusic.module_search.utils.getKeywordsSpanner
 import com.xmusic.module_search.utils.grayColor
 import com.xmusic.module_search.utils.keywordsColor
-import com.xw.lib_common.ext.specifyLoad
 import com.xw.lib_common.utils.GlideUtils
 import com.xw.lib_coremodel.model.bean.home.ArtistInfo
 
@@ -23,19 +22,20 @@ class SearchSingerViewHolder(private val binding: ItemSearchSingerBinding) :
     fun bind(artistInfo: ArtistInfo, keywords: String) {
         with(binding) {
             singer = artistInfo
-            singerName.text = if (artistInfo.alias.isNullOrEmpty().not()){
+            singerName.text = if (artistInfo.alias.isNullOrEmpty().not()) {
                 getKeywordsSpanner(artistInfo.name, keywords, blackColor, keywordsColor, 13).append(
                     getKeywordsSpanner(
                         "(${artistInfo.alias.reduce { acc, s -> "$acc/$s" }})", keywords, grayColor,
                         keywordsColor, 13
                     )
                 )
-            }else{
+            } else {
                 getKeywordsSpanner(artistInfo.name, keywords, blackColor, keywordsColor, 13)
             }
 
+            // todo : fix crash
             GlideUtils.loadImageCircleCrop(
-                binding.root.context, singerLogo, artistInfo.picUrl.specifyLoad(50, 50),
+                binding.root.context, singerLogo, artistInfo.picUrl,
                 R.drawable.icon_user_circle
             )
             executePendingBindings()

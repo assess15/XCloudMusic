@@ -3,6 +3,7 @@ package com.xw.xmusic
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.Window
 import android.view.WindowManager
 import com.orhanobut.logger.Logger
@@ -36,7 +37,9 @@ class SplashActivity : AppCompatActivity() {
             runApp()
         }else{
             if (mPermissionHelper.isAllRequestedPermissionGranted()){
-                runApp()
+                Handler().postDelayed({
+                    runApp()
+                },2000)
             }else{
                 mPermissionHelper.applyPermissions()
             }

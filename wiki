@@ -1,0 +1,7 @@
+// 将svg图片生成 指定维度的png图片
+vectorDrawables.generatedDensities('xhdpi','xxhdpi')
+// 使用support-v7兼容（5.0版本以上）
+vectorDrawables.useSupportLibrary = true
+
+api
+https://github.com/Binaryify/NeteaseCloudMusicApi/issues/452

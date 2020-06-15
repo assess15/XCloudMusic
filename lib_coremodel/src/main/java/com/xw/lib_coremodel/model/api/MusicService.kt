@@ -33,10 +33,15 @@ interface MusicService {
     suspend fun getHomeRecommendPlayList(@Query("limit") limit: Int): RecommendPlayList
 
     @GET("/recommend/resource")
-    suspend fun getRecommendPlayListNeedLogin(@Query("timestamp") timestamp: String = System.currentTimeMillis().toString()): RecommendPlayList
+    suspend fun getRecommendPlayListNeedLogin(
+        @Query("timestamp") timestamp: String = System.currentTimeMillis().toString()
+    ): RecommendPlayList
 
     @GET("/top/album")
-    suspend fun getHomeRecommendAlbum(@Query("offset") offset: Int, @Query("limit") limit: Int): AlbumListData
+    suspend fun getHomeRecommendAlbum(
+        @Query("offset") offset: Int,
+        @Query("limit") limit: Int
+    ): AlbumListData
 
     @GET("/personalized/newsong") //新歌推荐
     suspend fun getRecommendNewSong(): NewSongData
@@ -45,7 +50,10 @@ interface MusicService {
     suspend fun getTopList(): TopList
 
     @GET("/playlist/detail")
-    suspend fun getPlayList(@Query("id") id: String, @Query("timestamp") timestamp: String): PlayListData
+    suspend fun getPlayList(
+        @Query("id") id: String,
+        @Query("timestamp") timestamp: String
+    ): PlayListData
 
     @GET("/song/url")
     suspend fun getPlayUrl(@Query("id") ids: String): PlayUrlData
@@ -62,32 +70,45 @@ interface MusicService {
 
     @FormUrlEncoded
     @POST("/captcha/verify")
-    suspend fun verifyCaptcha(@Field("phone") phone: String, @Field("captcha") captcha: String): BaseHttpResponse
+    suspend fun verifyCaptcha(
+        @Field("phone") phone: String,
+        @Field("captcha") captcha: String
+    ): BaseHttpResponse
 
     @FormUrlEncoded
     @POST("/login/cellphone")
-    suspend fun phoneLogin(@Field("phone") phone: String, @Field("password") password: String): LoginResponse
+    suspend fun phoneLogin(
+        @Field("phone") phone: String,
+        @Field("password") password: String
+    ): LoginResponse
 
     @FormUrlEncoded
     @POST("/login")
-    suspend fun emailLogin(@Field("email") email: String, @Field("password") password: String): EmailLoginResponse
+    suspend fun emailLogin(
+        @Field("email") email: String,
+        @Field("password") password: String
+    ): EmailLoginResponse
 
     @FormUrlEncoded
     @POST("/register/cellphone")
     suspend fun registerWithPhone(
-        @Field("phone") phone: String, @Field("password") password: String, @Field(
-            "captcha"
-        ) captcha: String, @Field("nickname") nickname: String?
+        @Field("phone") phone: String,
+        @Field("password") password: String,
+        @Field("captcha") captcha: String,
+        @Field("nickname") nickname: String?
     ): LoginResponse
 
     @FormUrlEncoded
     @POST("/likelist")
-    suspend fun getLikeIds(@Field("timestamp") timestamp: String = System.currentTimeMillis().toString()): LikeListResponse
+    suspend fun getLikeIds(
+        @Field("timestamp") timestamp: String = System.currentTimeMillis().toString()
+    ): LikeListResponse
 
     @FormUrlEncoded
     @POST("/like")
     suspend fun likeMusic(
-        @Field("id") id: String, @Field("like") isLike: Boolean,
+        @Field("id") id: String,
+        @Field("like") isLike: Boolean,
         @Field("timestamp") timestamp: String = System.currentTimeMillis().toString()
     ): BaseHttpResponse
 
@@ -96,7 +117,8 @@ interface MusicService {
 
     @GET("/playlist/subscribe")
     suspend fun subscribePlayList(
-        @Query("id") id: String, @Query("t") t: Int,
+        @Query("id") id: String,
+        @Query("t") t: Int,
         @Query("timestamp") timestamp: String = System.currentTimeMillis().toString()
     ): BaseHttpResponse
 
@@ -148,7 +170,9 @@ interface MusicService {
      * 默认搜索关键词
      */
     @GET("/search/default")
-    suspend fun getDefaultSearch(@Query("timestamp") timestamp: String = System.currentTimeMillis().toString()): DefaultSearchResponse
+    suspend fun getDefaultSearch(
+        @Query("timestamp") timestamp: String = System.currentTimeMillis().toString()
+    ): DefaultSearchResponse
 
     /**
      * 热门搜索列表

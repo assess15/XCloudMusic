@@ -1,6 +1,7 @@
 package com.xmusic.module_login.ui
 
 
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.xmusic.module_login.R
 import com.xmusic.module_login.databinding.FragmentSettingPwdBinding
@@ -24,16 +25,17 @@ class SettingPwdFragment : LoginBaseFragment<FragmentSettingPwdBinding>() {
                 toast(getString(R.string.data_input_password))
                 return@setOnClickListener
             }
-            SettingPwdFragmentDirections.enterCodeFragmentToRegisterFragment(
-                args.phone,
-                args.code,
-                pwd
-            )
+            val directions =
+                SettingPwdFragmentDirections.enterCodeFragmentToRegisterFragment(
+                    args.phone,
+                    args.code,
+                    pwd
+                )
+            findNavController().navigate(directions)
         }
     }
 
     override val layoutId: Int
         get() = R.layout.fragment_setting_pwd
-
 
 }
