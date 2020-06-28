@@ -15,7 +15,6 @@ object JNIUtils {
 
     external fun getIndex(arr: IntArray, left: Int, right: Int, value: Int): Int
 
-    //除法 保留小数一位
-    external fun divson(a:Long,b:Long):Float
-
+    // 方式1: 除法 保留小数一位
+    external fun divson(a: Long, b: Long): Float
 }

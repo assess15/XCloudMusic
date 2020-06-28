@@ -609,11 +609,9 @@ class MediaService : Service() {
             cycleRepeat()
         } else if (SHUFFLE_ACTION == action) {
             cycleShuffle()
-        }
-//        else if (Intent.ACTION_SCREEN_OFF == action) {
+        } else if (Intent.ACTION_SCREEN_OFF == action) {
 //        //TODO 桌面
-//        }
-        else if (SEND_PROGRESS == action) {
+        } else if (SEND_PROGRESS == action) {
             if (isPlaying() && !mIsSending) {
                 mPlayerHandler.post(sendDuration)
                 mIsSending = true

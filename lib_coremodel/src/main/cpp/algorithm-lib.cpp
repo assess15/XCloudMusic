@@ -12,44 +12,46 @@
 #define LOGF(...) __android_log_print(ANDROID_LOG_FATAL,TAG ,__VA_ARGS__) // 定义LOGF类型
 
 // 获取数组的大小
-# define NELEM(x) ((int) (sizeof(x) / sizeof((x)[0])))
+# define nMethods(x) ((int) (sizeof(x) / sizeof((x)[0])))
 
 using namespace std;
 
 //除法位运算
-jfloat divson(JNIEnv *env, jobject instance,jlong a,jlong b){
+static jfloat divson(JNIEnv *env, jobject instance, jlong a, jlong b) {
 //    jfloat cnt = 0;
-
+    return a / b;
 }
 
 // 注册native方法到java中
-static int registerNativeMethods(JNIEnv *env, const char *className,
-                                 JNINativeMethod *gMethods, int numMethods) {
-    jclass clazz;
-    clazz = env->FindClass(className);
-    if (clazz == NULL) {
-        return JNI_FALSE;
-    }
-    if (env->RegisterNatives(clazz, gMethods, numMethods) < 0) {
-        return JNI_FALSE;
-    }
+//static int registerNativeMethods(JNIEnv *env, const char *className,
+//                                 JNINativeMethod *gMethods, int numMethods) {
+//    jclass clazz;
+//    clazz = env->FindClass(className);
+//    if (clazz == NULL) {
+//        return JNI_FALSE;
+//    }
+//    if (env->RegisterNatives(clazz, gMethods, numMethods) < 0) {
+//        return JNI_FALSE;
+//    }
+//
+//    return JNI_TRUE;
+//}
 
-    return JNI_TRUE;
-}
+static const char *const mClassName = "com/xw/lib_coremodel/utils/JNIUtils";
 
-static const char *mClassName = "com/masterxing/lib_coremodel/utils/JNIUtils";
-
-static JNINativeMethod method[] = {
+static JNINativeMethod methods[] = {
         {"divson", "(JJ)F", (jfloat *) divson}
 };
 
-int register_ndk_load(JNIEnv *env) {
-    // 调用注册方法
-    return registerNativeMethods(env, mClassName,
-                                 method, NELEM(method));
-}
+//int register_ndk_load(JNIEnv *env) {
+//    // 调用注册方法
+//    return registerNativeMethods(env, mClassName,
+//                                 method, NELEM(method));
+//}
 
-JNIEXPORT jint JNI_OnLoad(JavaVM *vm, void *reserved) {
+extern "C"
+JNIEXPORT jint JNICALL
+JNI_OnLoad(JavaVM *vm, void *reserved) {
     LOGD("jni_OnLoad");
     JNIEnv *env = NULL;
     jint result = -1;
@@ -58,7 +60,18 @@ JNIEXPORT jint JNI_OnLoad(JavaVM *vm, void *reserved) {
         return result;
     }
 
-    jint bool1 = register_ndk_load(env);
+//    jint bool1 = register_ndk_load(env);
+    jclass clazz = env->FindClass(mClassName);
+    if (env->RegisterNatives(clazz, methods, nMethods(methods)) < 0) {
+        return JNI_FALSE;
+    }
     // 返回jni的版本
     return JNI_VERSION_1_6;
+}
+
+extern "C"
+JNIEXPORT jint JNICALL
+Java_com_xw_lib_1coremodel_utils_JNIUtils_getIndex(JNIEnv *env, jobject thiz, jintArray arr,
+                                                   jint left, jint right, jint value) {
+    return 1;
 }
