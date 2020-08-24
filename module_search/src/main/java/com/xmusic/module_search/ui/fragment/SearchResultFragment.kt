@@ -9,7 +9,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.xmusic.module_search.R
 import com.xmusic.module_search.databinding.FragmentSearchResultBinding
 import com.xw.lib_common.base.view.fragment.BaseModelFragment
-import com.xw.lib_coremodel.data.SearchType
+import com.xw.lib_coremodel.database.entities.SearchType
 import com.xw.lib_coremodel.utils.InjectorUtils
 import com.xw.lib_coremodel.viewmodel.search.SearchViewModel
 import kotlinx.android.synthetic.main.fragment_search_result.*

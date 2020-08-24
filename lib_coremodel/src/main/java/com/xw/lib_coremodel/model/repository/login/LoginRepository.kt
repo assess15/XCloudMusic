@@ -1,7 +1,7 @@
 package com.xw.lib_coremodel.model.repository.login
 
 import android.content.Context
-import com.xw.lib_coremodel.data.LoginUserInfo
+import com.xw.lib_coremodel.database.entities.LoginUserInfo
 import com.xw.lib_coremodel.model.api.MusicRetrofitClient
 import com.xw.lib_coremodel.model.bean.BaseHttpResponse
 import com.xw.lib_coremodel.model.bean.login.EmailLoginResponse

@@ -38,10 +38,10 @@ import com.xw.lib_common.proxy.utils.MediaPlayerProxy
 import com.xw.lib_common.receiver.MediaButtonIntentReceiver
 import com.xw.lib_common.utils.GlideApp
 import com.xw.lib_coremodel.CoreApplication
-import com.xw.lib_coremodel.data.AppDatabase
-import com.xw.lib_coremodel.data.AppDatabaseBuilder
-import com.xw.lib_coremodel.data.RecentHistory
-import com.xw.lib_coremodel.data.SongLrc
+import com.xw.lib_coremodel.database.AppDatabase
+import com.xw.lib_coremodel.database.AppDatabaseBuilder
+import com.xw.lib_coremodel.database.entities.RecentHistory
+import com.xw.lib_coremodel.database.entities.SongLrc
 import com.xw.lib_coremodel.model.bean.LrcAdnTlyRic
 import com.xw.lib_coremodel.model.bean.info.MusicInfo
 import com.xw.lib_coremodel.model.repository.PlayServiceRepository

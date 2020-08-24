@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.paging.ItemKeyedDataSource
 import com.orhanobut.logger.Logger
 import com.xw.lib_coremodel.CoreApplication
-import com.xw.lib_coremodel.data.SearchType
+import com.xw.lib_coremodel.database.entities.SearchType
 import com.xw.lib_coremodel.model.api.MusicRetrofitClient
 import com.xw.lib_coremodel.model.bean.NetworkState
 import com.xw.lib_coremodel.model.bean.search.*

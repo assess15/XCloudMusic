@@ -1,6 +1,6 @@
 package com.xw.lib_coremodel.model.bean.search
 
-import com.xw.lib_coremodel.data.SearchHistory
+import com.xw.lib_coremodel.database.entities.SearchHistory
 import java.io.Serializable
 
 /**

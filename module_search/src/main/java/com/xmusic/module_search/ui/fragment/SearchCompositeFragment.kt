@@ -6,8 +6,7 @@ import com.xmusic.module_search.R
 import com.xmusic.module_search.databinding.FragmentSearchCompositeBinding
 import com.xmusic.module_search.ui.fragment.SearchResultVpFragment.Companion.SEARCH_TYPE
 import com.xw.lib_common.base.view.fragment.BaseModelFragment
-import com.xw.lib_coremodel.data.SearchType
-import com.xw.lib_coremodel.ext.toListComposite
+import com.xw.lib_coremodel.database.entities.SearchType
 import com.xw.lib_coremodel.model.bean.search.CompositeCommon
 import com.xw.lib_coremodel.utils.DataHolder
 import com.xw.lib_coremodel.utils.InjectorUtils

@@ -1,7 +1,9 @@
-package com.xw.lib_coremodel.data
+package com.xw.lib_coremodel.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import com.xw.lib_coremodel.database.dao.*
+import com.xw.lib_coremodel.database.entities.*
 import com.xw.lib_coremodel.model.bean.home.PlayListCat
 
 /**

@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.lifecycle.Transformations
 import androidx.paging.Config
 import androidx.paging.toLiveData
-import com.xw.lib_coremodel.data.SearchType
+import com.xw.lib_coremodel.database.entities.SearchType
 import com.xw.lib_coremodel.model.bean.Listing
 import com.xw.lib_coremodel.model.repository.BaseRepository
 import com.xw.lib_coremodel.viewmodel.search.SearchResultDataSourceFactory

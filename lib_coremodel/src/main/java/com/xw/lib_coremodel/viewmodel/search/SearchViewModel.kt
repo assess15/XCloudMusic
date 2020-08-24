@@ -5,7 +5,7 @@ import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonReader
 import com.orhanobut.logger.Logger
 import com.xw.lib_coremodel.CoreApplication
-import com.xw.lib_coremodel.data.SearchType
+import com.xw.lib_coremodel.database.entities.SearchType
 import com.xw.lib_coremodel.model.bean.search.DefaultSearchData
 import com.xw.lib_coremodel.model.bean.search.HotSearchData
 import com.xw.lib_coremodel.model.bean.search.SuggestSearchData

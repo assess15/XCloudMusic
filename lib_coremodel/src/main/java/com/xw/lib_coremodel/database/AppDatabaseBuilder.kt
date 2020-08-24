@@ -1,4 +1,4 @@
-package com.xw.lib_coremodel.data
+package com.xw.lib_coremodel.database
 
 import android.content.Context
 import androidx.room.Room

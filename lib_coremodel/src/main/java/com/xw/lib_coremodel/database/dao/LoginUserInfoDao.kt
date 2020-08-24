@@ -1,7 +1,8 @@
-package com.xw.lib_coremodel.data
+package com.xw.lib_coremodel.database.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.xw.lib_coremodel.database.entities.LoginUserInfo
 
 /**
  * @author: xingwei

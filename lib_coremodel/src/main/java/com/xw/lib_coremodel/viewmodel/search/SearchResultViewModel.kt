@@ -2,7 +2,7 @@ package com.xw.lib_coremodel.viewmodel.search
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
-import com.xw.lib_coremodel.data.SearchType
+import com.xw.lib_coremodel.database.entities.SearchType
 import com.xw.lib_coremodel.model.repository.search.SearchResultRepository
 import com.xw.lib_coremodel.viewmodel.BaseViewModel
 

@@ -1,9 +1,8 @@
-package com.xw.lib_coremodel.data
+package com.xw.lib_coremodel.database.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.util.*
 
 
 /**

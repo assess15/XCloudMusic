@@ -7,8 +7,8 @@ import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonReader
 import com.orhanobut.logger.Logger
 import com.xw.lib_coremodel.CoreApplication
-import com.xw.lib_coremodel.data.AppDatabaseBuilder
-import com.xw.lib_coremodel.data.SearchType
+import com.xw.lib_coremodel.database.AppDatabaseBuilder
+import com.xw.lib_coremodel.database.entities.SearchType
 import com.xw.lib_coremodel.utils.SEARCH_TYPE_FILENAME
 import kotlinx.coroutines.coroutineScope
 

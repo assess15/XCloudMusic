@@ -12,7 +12,7 @@ import com.xmusic.module_search.databinding.ItemHotSearchBinding
 import com.xmusic.module_search.databinding.ItemSearchHistoryBinding
 import com.xw.lib_common.ext.*
 import com.xw.lib_common.utils.GlideApp
-import com.xw.lib_coremodel.data.SearchHistory
+import com.xw.lib_coremodel.database.entities.SearchHistory
 import com.xw.lib_coremodel.model.bean.search.HotSearchData
 
 /**

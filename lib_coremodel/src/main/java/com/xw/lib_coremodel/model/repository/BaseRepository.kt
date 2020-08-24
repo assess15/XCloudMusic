@@ -1,7 +1,7 @@
 package com.xw.lib_coremodel.model.repository
 
 import android.content.Context
-import com.xw.lib_coremodel.data.AppDatabaseBuilder
+import com.xw.lib_coremodel.database.AppDatabaseBuilder
 import com.xw.lib_coremodel.model.bean.BaseHttpResponse
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

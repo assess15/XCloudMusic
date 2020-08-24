@@ -1,12 +1,10 @@
 package com.xmusic.module_search.ui.fragment
 
 import android.os.Bundle
-import androidx.lifecycle.Observer
 import com.xmusic.module_search.adapter.BaseSearchAdapter
 import com.xmusic.module_search.adapter.SearchVideosAdapter
-import com.xw.lib_coremodel.data.SearchType
+import com.xw.lib_coremodel.database.entities.SearchType
 import com.xw.lib_coremodel.model.bean.video.SearchVideoItemInfo
-import com.xw.lib_coremodel.utils.DataHolder
 
 /**
  * @author: xingwei

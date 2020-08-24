@@ -1,10 +1,11 @@
-package com.xw.lib_coremodel.data
+package com.xw.lib_coremodel.database.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.xw.lib_coremodel.database.entities.SearchType
 
 /**
  * @author: xingwei

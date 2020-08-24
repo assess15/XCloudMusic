@@ -3,14 +3,12 @@ package com.xmusic.module_search.ui.fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.xmusic.module_search.R
 import com.xmusic.module_search.adapter.BaseSearchAdapter
 import com.xmusic.module_search.databinding.FragmentSearchResultVpBinding
 import com.xw.lib_common.base.view.fragment.BaseModelFragment
-import com.xw.lib_coremodel.data.SearchType
-import com.xw.lib_coremodel.utils.DataHolder
+import com.xw.lib_coremodel.database.entities.SearchType
 import com.xw.lib_coremodel.utils.InjectorUtils
 import com.xw.lib_coremodel.viewmodel.search.SearchResultViewModel
 import kotlinx.android.synthetic.main.fragment_search_result_vp.*

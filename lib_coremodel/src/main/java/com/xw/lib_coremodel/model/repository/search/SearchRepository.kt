@@ -2,7 +2,9 @@ package com.xw.lib_coremodel.model.repository.search
 
 import android.content.Context
 import androidx.lifecycle.LiveData
-import com.xw.lib_coremodel.data.*
+import com.xw.lib_coremodel.database.*
+import com.xw.lib_coremodel.database.dao.SearchHistoryDao
+import com.xw.lib_coremodel.database.entities.SearchHistory
 import com.xw.lib_coremodel.model.api.MusicRetrofitClient
 import com.xw.lib_coremodel.model.bean.search.DefaultSearchResponse
 import com.xw.lib_coremodel.model.bean.search.HotSearchResponse

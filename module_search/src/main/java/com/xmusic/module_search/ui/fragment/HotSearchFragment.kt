@@ -4,14 +4,12 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.afollestad.materialdialogs.MaterialDialog
-import com.orhanobut.logger.Logger
 import com.xmusic.module_search.R
 import com.xmusic.module_search.adapter.HotSearchAdapter
 import com.xmusic.module_search.databinding.FragmentHotSearchBinding
 import com.xmusic.module_search.ui.activity.SearchActivity
 import com.xw.lib_common.base.view.fragment.BaseModelFragment
-import com.xw.lib_common.ext.toast
-import com.xw.lib_coremodel.data.SearchHistory
+import com.xw.lib_coremodel.database.entities.SearchHistory
 import com.xw.lib_coremodel.model.bean.search.HotSearchData
 import com.xw.lib_coremodel.utils.InjectorUtils
 import com.xw.lib_coremodel.viewmodel.search.SearchViewModel

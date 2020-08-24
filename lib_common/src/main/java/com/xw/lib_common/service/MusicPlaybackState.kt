@@ -2,9 +2,9 @@ package com.xw.lib_common.service
 
 import com.orhanobut.logger.Logger
 import com.xw.lib_common.base.BaseApplication
-import com.xw.lib_coremodel.data.AppDatabaseBuilder
-import com.xw.lib_coremodel.data.PlaybackHistory
-import com.xw.lib_coremodel.data.PlaybackList
+import com.xw.lib_coremodel.database.AppDatabaseBuilder
+import com.xw.lib_coremodel.database.entities.PlaybackHistory
+import com.xw.lib_coremodel.database.entities.PlaybackList
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.util.*

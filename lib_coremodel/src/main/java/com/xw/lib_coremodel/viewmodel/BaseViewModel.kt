@@ -2,7 +2,7 @@ package com.xw.lib_coremodel.viewmodel
 
 import androidx.lifecycle.*
 import com.orhanobut.logger.Logger
-import com.xw.lib_coremodel.data.LoginUserInfo
+import com.xw.lib_coremodel.database.entities.LoginUserInfo
 import com.xw.lib_coremodel.model.bean.BaseHttpResponse
 import com.xw.lib_coremodel.model.repository.BaseRepository
 import kotlinx.coroutines.*

@@ -1,9 +1,10 @@
-package com.xw.lib_coremodel.data
+package com.xw.lib_coremodel.database.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
+import com.xw.lib_coremodel.database.entities.PlaybackHistory
 
 /**
  * @author: xingwei

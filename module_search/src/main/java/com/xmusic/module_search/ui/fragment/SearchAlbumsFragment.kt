@@ -3,7 +3,7 @@ package com.xmusic.module_search.ui.fragment
 import android.os.Bundle
 import com.xmusic.module_search.adapter.BaseSearchAdapter
 import com.xmusic.module_search.adapter.SearchAlbumsAdapter
-import com.xw.lib_coremodel.data.SearchType
+import com.xw.lib_coremodel.database.entities.SearchType
 import com.xw.lib_coremodel.model.bean.home.AlbumItemInfo
 
 /**
