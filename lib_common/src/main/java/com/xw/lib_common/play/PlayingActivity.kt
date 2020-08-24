@@ -27,7 +27,6 @@ import com.xw.lib_common.service.MusicPlayer
 import com.xw.lib_common.utils.GlideUtils
 import com.xw.lib_common.view.AlbumViewPager
 import com.xw.lib_coremodel.ext.afterLogin
-import com.xw.lib_coremodel.ext.isLogined
 import com.xw.lib_coremodel.model.bean.LrcAdnTlyRic
 import com.xw.lib_coremodel.utils.InjectorUtils
 import com.xw.lib_coremodel.viewmodel.PlayingViewModel
@@ -132,7 +131,7 @@ class PlayingActivity : BaseActivity<ActivityPlayingBinding, PlayingViewModel>()
             }
         })
 
-        viewModel?.loginUser?.observe(this, Observer {
+        viewModel?.loginUser(this, Observer {
             if (it == null) {
                 viewModel?.likeList?.postValue(longArrayOf())
             } else {

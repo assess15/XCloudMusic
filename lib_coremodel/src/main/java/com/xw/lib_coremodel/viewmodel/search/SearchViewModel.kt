@@ -1,14 +1,11 @@
 package com.xw.lib_coremodel.viewmodel.search
 
 import androidx.lifecycle.MutableLiveData
-import androidx.work.ListenableWorker
 import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonReader
 import com.orhanobut.logger.Logger
 import com.xw.lib_coremodel.CoreApplication
-import com.xw.lib_coremodel.data.AppDatabase
 import com.xw.lib_coremodel.data.SearchType
-import com.xw.lib_coremodel.ext.executeResponse
 import com.xw.lib_coremodel.model.bean.search.DefaultSearchData
 import com.xw.lib_coremodel.model.bean.search.HotSearchData
 import com.xw.lib_coremodel.model.bean.search.SuggestSearchData
@@ -28,13 +25,9 @@ class SearchViewModel internal constructor(private val repository: SearchReposit
     BaseViewModel(repository) {
 
     val defaultSearch = MutableLiveData<DefaultSearchData>()
-
     val suggestSearchList = MutableLiveData<List<SuggestSearchData>>()
-
     val hotSearchList = MutableLiveData<MutableList<HotSearchData>>()
-
     val searchHistory = repository.getHistory()
-
     val searchTypes = MutableLiveData<List<SearchType>>()
 
     fun getSearchTypes() {
@@ -60,7 +53,7 @@ class SearchViewModel internal constructor(private val repository: SearchReposit
 
     fun getDefaultSearch() {
         launch {
-            val defaultSearchData = withContext(Dispatchers.IO) { repository.getDefaultSearch() }
+            val defaultSearchData = repository.getDefaultSearch()
             executeResponse(
                 defaultSearchData,
                 { defaultSearch.postValue(defaultSearchData.data) },

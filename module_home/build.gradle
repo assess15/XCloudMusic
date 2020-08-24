@@ -43,20 +43,10 @@ android {
 
     buildFeatures { dataBinding = true }
     kotlinOptions {jvmTarget = "1.8"}
-//
-//    sourceSets{
-//        main{
-//            if (isModule.toBoolean()){
-//                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
-//            }else {
-//                manifest.srcFile 'src/main/AndroidManifest.xml'
-//                //release模式下排除debug文件夹中的所有Java文件
-//                java {
-//                    exclude 'debug/**'
-//                }
-//            }
-//        }
-//    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
 
 }
 

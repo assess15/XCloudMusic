@@ -134,7 +134,7 @@ abstract class BaseFragment<VB : ViewDataBinding> : StateListenerFragment() {
     protected fun showLoading() {
         if (progressBar == null) {
             val view = mRootView!!.findViewById<ViewStub>(R.id.vs_loading).inflate()
-            progressBar = view!!.findViewById(R.id.loading)
+            progressBar = requireView().findViewById(R.id.loading)
         }
         activity?.apply { hideSoftInput() }
         progressBar?.show()

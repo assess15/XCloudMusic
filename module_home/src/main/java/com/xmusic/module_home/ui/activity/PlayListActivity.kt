@@ -6,17 +6,19 @@ import android.graphics.drawable.Drawable
 import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
-import com.xw.lib_common.base.view.activity.BaseActivity
-import com.xw.lib_coremodel.utils.InjectorUtils
-import com.xw.lib_coremodel.viewmodel.home.PlayListDetailViewModel
-import com.xmusic.module_home.R
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
 import com.google.android.material.appbar.AppBarLayout
-import com.orhanobut.logger.Logger
-import com.xw.lib_common.ext.*
+import com.xmusic.module_home.R
+import com.xmusic.module_home.adapter.PlayListAdapter
+import com.xmusic.module_home.databinding.ActivityPlayListBinding
+import com.xw.lib_common.base.view.activity.BaseActivity
+import com.xw.lib_common.ext.formatting
+import com.xw.lib_common.ext.getCurTime
+import com.xw.lib_common.ext.show
+import com.xw.lib_common.ext.toast
 import com.xw.lib_common.utils.GlideApp
 import com.xw.lib_common.utils.GlideUtils
 import com.xw.lib_coremodel.ext.afterLogin
@@ -27,13 +29,12 @@ import com.xw.lib_coremodel.model.bean.home.PlayListSimpleInfo
 import com.xw.lib_coremodel.model.bean.home.Privilege
 import com.xw.lib_coremodel.utils.ACache
 import com.xw.lib_coremodel.utils.DataHolder
-import com.xmusic.module_home.adapter.PlayListAdapter
-import com.xmusic.module_home.databinding.ActivityPlayListBinding
+import com.xw.lib_coremodel.utils.InjectorUtils
+import com.xw.lib_coremodel.viewmodel.home.PlayListDetailViewModel
 import jp.wasabeef.glide.transformations.BlurTransformation
 import kotlinx.android.synthetic.main.activity_play_list.*
 import kotlinx.android.synthetic.main.include_play_list_header.*
 import kotlin.math.abs
-
 
 /**
  * @author: xingwei
@@ -128,7 +129,7 @@ class PlayListActivity : BaseActivity<ActivityPlayListBinding, PlayListDetailVie
             notifyAdapter(it.songs, it.privileges)
         })
 
-        viewModel.loginUser?.observe(this, Observer {
+        viewModel.loginUser(this, Observer {
             if (isFirst.not()) {
                 showLoading()
                 val curTime = getCurTime()
@@ -170,7 +171,7 @@ class PlayListActivity : BaseActivity<ActivityPlayListBinding, PlayListDetailVie
     private fun notifyCollectView(subCount: Long) {
         includePlayAll.show()
         bindingView.includePlayAll.apply {
-            moreChoices.setSubscribedCount(mAdapter?.mSubscribed?:false, subCount,
+            moreChoices.setSubscribedCount(mAdapter?.mSubscribed ?: false, subCount,
                 View.OnClickListener {
                     onCollect(1)
                 }, View.OnClickListener {

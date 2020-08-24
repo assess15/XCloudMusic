@@ -6,7 +6,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.orhanobut.logger.Logger
 import com.shuyu.gsyvideoplayer.GSYVideoManager
 import com.xmusic.module_video.R
 import com.xmusic.module_video.databinding.FragmentListVideoBinding
@@ -104,7 +103,7 @@ class VideoListFragment : BaseModelFragment<FragmentListVideoBinding, VideoListV
             swipeRefresh.isRefreshing = false
             videoListAdapter?.setNetworkState(it)
         })
-        viewModel.loginUser?.observe(this, Observer {
+        viewModel.loginUser(this, Observer {
             initData()
         })
     }

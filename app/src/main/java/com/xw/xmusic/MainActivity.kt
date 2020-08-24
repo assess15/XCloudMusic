@@ -2,13 +2,11 @@ package com.xw.xmusic
 
 import android.content.Context
 import android.content.Intent
-import android.os.Build
-import android.os.Bundle
-import android.transition.Explode
-import android.view.*
+import android.view.Menu
+import android.view.MenuItem
+import android.view.ViewStub
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
@@ -17,7 +15,6 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.navigation.NavigationView
-import com.orhanobut.logger.Logger
 import com.xmusic.module_home.ui.fragment.HomeFragment
 import com.xmusic.module_home.ui.fragment.HomeUserFragment
 import com.xmusic.module_video.ui.fragment.HomeVideoFragment
@@ -74,8 +71,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(),
 
     override fun startObserve() {
         super.startObserve()
-
-        viewModel.loginUser?.observe(this, Observer {
+        viewModel.loginUser(this, Observer {
             if (it != null) {
                 if (mLoggedVs.parent != null) {
                     val view = mLoggedVs.inflate()

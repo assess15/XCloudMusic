@@ -2,12 +2,11 @@ package com.xw.lib_coremodel.ext
 
 import android.app.Activity
 import android.widget.Toast
-import com.alibaba.android.arouter.launcher.ARouter
 import com.google.gson.JsonParseException
 import com.orhanobut.logger.Logger
 import com.xw.lib_coremodel.CoreApplication
 import com.xw.lib_coremodel.NetContacts
-import com.xw.lib_coremodel.data.AppDatabase
+import com.xw.lib_coremodel.data.AppDatabaseBuilder
 import com.xw.lib_coremodel.data.SearchType
 import com.xw.lib_coremodel.model.bean.BaseHttpResponse
 import com.xw.lib_coremodel.model.bean.search.Composite
@@ -31,8 +30,6 @@ import javax.net.ssl.SSLHandshakeException
  *
  * Desc:
  */
-
-
 suspend fun executeResponse(
     response: BaseHttpResponse, successBlock: suspend CoroutineScope.() -> Unit,
     errorBlock: suspend CoroutineScope.() -> Unit
@@ -86,7 +83,7 @@ fun Activity.onNetError(e: Throwable, func: (e: Throwable) -> Unit) {
 
 fun clearLoginUserInfo() {
     GlobalScope.launch {
-        AppDatabase.getInstance(CoreApplication.CONTEXT).loginUserDao().deleteUser()
+        AppDatabaseBuilder.getInstance(CoreApplication.CONTEXT).loginUserDao().deleteUser()
         PreferencesUtility.getInstance(CoreApplication.CONTEXT).clearToken()
     }
 }
@@ -111,7 +108,7 @@ fun afterLogin(method: () -> Unit) {
     }
 }
 
-fun goLogin(){
+fun goLogin() {
     RouterPath.module_login.PATH_LOGIN.navigation()
 }
 

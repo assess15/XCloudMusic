@@ -1,9 +1,7 @@
 package com.xw.lib_coremodel.model.repository.login
 
 import android.content.Context
-import com.xw.lib_coremodel.data.AppDatabase
 import com.xw.lib_coremodel.data.LoginUserInfo
-import com.xw.lib_coremodel.data.LoginUserInfoDao
 import com.xw.lib_coremodel.model.api.MusicRetrofitClient
 import com.xw.lib_coremodel.model.bean.BaseHttpResponse
 import com.xw.lib_coremodel.model.bean.login.EmailLoginResponse
@@ -11,8 +9,6 @@ import com.xw.lib_coremodel.model.bean.login.LoginResponse
 import com.xw.lib_coremodel.model.bean.login.PhoneExist
 import com.xw.lib_coremodel.model.repository.BaseRepository
 import com.xw.lib_coremodel.utils.PreferencesUtility
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 
 /**
  * @author: xingwei
@@ -60,7 +56,7 @@ class LoginRepository private constructor(context: Context) :
     }
 
     suspend fun saveLoginUser(loginResponse: LoginResponse) {
-        withContext(Dispatchers.IO) {
+        launch {
             val userInfo = loginResponse.profile
             context.apply { PreferencesUtility.getInstance(this).setUserId(userInfo.userId) }
             val loginUserInfo = LoginUserInfo(

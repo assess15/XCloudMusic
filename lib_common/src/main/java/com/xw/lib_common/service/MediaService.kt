@@ -39,6 +39,7 @@ import com.xw.lib_common.receiver.MediaButtonIntentReceiver
 import com.xw.lib_common.utils.GlideApp
 import com.xw.lib_coremodel.CoreApplication
 import com.xw.lib_coremodel.data.AppDatabase
+import com.xw.lib_coremodel.data.AppDatabaseBuilder
 import com.xw.lib_coremodel.data.RecentHistory
 import com.xw.lib_coremodel.data.SongLrc
 import com.xw.lib_coremodel.model.bean.LrcAdnTlyRic
@@ -949,7 +950,8 @@ class MediaService : Service() {
                     }
                     INSERT_RECENT -> {
                         if (service.appDatabase == null) {
-                            service.appDatabase = AppDatabase.getInstance(BaseApplication.CONTEXT)
+//                            service.appDatabase = AppDatabase.getInstance(BaseApplication.CONTEXT)
+                            service.appDatabase = AppDatabaseBuilder.getInstance(BaseApplication.CONTEXT)
                         }
                         val recentSong =
                             service.appDatabase!!.recentDao().getRecentSong(service.getAudioId())
@@ -1427,7 +1429,8 @@ class MediaService : Service() {
         Logger.d("------获取歌词------")
         GlobalScope.launch {
             if (appDatabase == null) {
-                appDatabase = AppDatabase.getInstance(BaseApplication.CONTEXT)
+//                appDatabase = AppDatabase.getInstance(BaseApplication.CONTEXT)
+                appDatabase = AppDatabaseBuilder.getInstance(BaseApplication.CONTEXT)
             }
             val urlAndLrcDao = appDatabase!!.urlAndLrc()
             var song = urlAndLrcDao.getSong(id)

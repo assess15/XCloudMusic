@@ -51,7 +51,8 @@ class SearchRepository(context: Context) : BaseRepository(context) {
     }
 
     private val historyDao: SearchHistoryDao by lazy {
-        AppDatabase.getInstance(context).searchHistoryDao()
+//        AppDatabase.getInstance(context).searchHistoryDao()
+        AppDatabaseBuilder.getInstance(context).searchHistoryDao()
     }
 
     companion object {

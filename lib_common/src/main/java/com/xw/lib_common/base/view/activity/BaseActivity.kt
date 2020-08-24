@@ -21,10 +21,6 @@ abstract class BaseActivity<VB : ViewDataBinding, VM : BaseViewModel> : BaseBind
 
     abstract val viewModel: VM?
 
-    private val netWorkState: NetWorkState by lazy {
-        NetWorkState(this)
-    }
-
     override fun startObserve() {
         viewModel?.apply {
             mException.observe(this@BaseActivity, Observer { it?.let { onError(it) } })

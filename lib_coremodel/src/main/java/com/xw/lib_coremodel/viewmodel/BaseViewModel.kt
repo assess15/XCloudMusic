@@ -1,9 +1,9 @@
 package com.xw.lib_coremodel.viewmodel
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.orhanobut.logger.Logger
+import com.xw.lib_coremodel.data.LoginUserInfo
+import com.xw.lib_coremodel.model.bean.BaseHttpResponse
 import com.xw.lib_coremodel.model.repository.BaseRepository
 import kotlinx.coroutines.*
 
@@ -13,14 +13,31 @@ import kotlinx.coroutines.*
  *
  * Desc:
  */
-open class BaseViewModel(baseRepository: BaseRepository? = null) : ViewModel() {
+open class BaseViewModel(val baseRepository: BaseRepository? = null) : ViewModel() {
 
     val mException: MutableLiveData<Throwable> = MutableLiveData()
 
-    val loginUser = baseRepository?.getLoginUser()
+    private val loginUser = baseRepository?.getLoginUser()
+
+    open suspend fun executeResponse(
+        response: BaseHttpResponse, successBlock: suspend CoroutineScope.() -> Unit,
+        errorBlock: suspend CoroutineScope.() -> Unit
+    ) {
+        coroutineScope {
+            if (response.isSuccess()) {
+                successBlock()
+            } else {
+                Logger.e("code = ${response.code}  msg = ${response.getResponseMsg()}")
+                errorBlock()
+            }
+        }
+    }
+
+    fun loginUser(owner: LifecycleOwner, observer: Observer<LoginUserInfo?>) {
+        this.loginUser!!.observe(owner, observer)
+    }
 
     private fun launchOnUI(block: suspend CoroutineScope.() -> Unit) {
-
         viewModelScope.launch { block() }
     }
 

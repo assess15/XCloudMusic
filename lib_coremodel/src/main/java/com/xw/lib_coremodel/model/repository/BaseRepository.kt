@@ -1,8 +1,11 @@
 package com.xw.lib_coremodel.model.repository
 
 import android.content.Context
-import com.xw.lib_coremodel.data.AppDatabase
+import com.xw.lib_coremodel.data.AppDatabaseBuilder
 import com.xw.lib_coremodel.model.bean.BaseHttpResponse
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 
 /**
@@ -14,7 +17,7 @@ import com.xw.lib_coremodel.model.bean.BaseHttpResponse
 open class BaseRepository(val context: Context) {
 
     protected val loginUserDao by lazy {
-        AppDatabase.getInstance(context).loginUserDao()
+        AppDatabaseBuilder.getInstance(context).loginUserDao()
     }
 
     @Suppress("UNCHECKED_CAST")
@@ -23,5 +26,9 @@ open class BaseRepository(val context: Context) {
     }
 
     fun getLoginUser() = loginUserDao.getLoginUser()
+
+    suspend fun launch(block: suspend CoroutineScope.() -> Unit) {
+        withContext(Dispatchers.IO) { block() }
+    }
 
 }

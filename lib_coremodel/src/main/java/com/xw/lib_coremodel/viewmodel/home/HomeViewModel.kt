@@ -1,12 +1,13 @@
 package com.xw.lib_coremodel.viewmodel.home
 
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
-import com.xw.lib_coremodel.CoreApplication
-import com.xw.lib_coremodel.ext.executeResponse
+import androidx.lifecycle.Observer
 import com.xw.lib_coremodel.ext.isLogined
-import com.xw.lib_coremodel.model.bean.home.*
+import com.xw.lib_coremodel.model.bean.home.AlbumsAndSongs
+import com.xw.lib_coremodel.model.bean.home.Banner
+import com.xw.lib_coremodel.model.bean.home.HomeMoreItem
 import com.xw.lib_coremodel.model.repository.home.HomeRepository
-import com.xw.lib_coremodel.utils.PreferencesUtility
 import com.xw.lib_coremodel.viewmodel.BaseViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -26,13 +27,20 @@ class HomeViewModel internal constructor(private val homeRepository: HomeReposit
         const val TYPE_TITLE_ALBUM_SONG = 102
     }
 
-    val mBanners: MutableLiveData<List<Banner>> = MutableLiveData()
+    private val mBanners: MutableLiveData<List<Banner>> = MutableLiveData()
+    private val mHomeMoreData: MutableLiveData<List<HomeMoreItem>> = MutableLiveData()
 
-    val mHomeMoreData: MutableLiveData<List<HomeMoreItem>> = MutableLiveData()
+    fun banner(owner: LifecycleOwner, observer: Observer<List<Banner>>) {
+        this.mBanners.observe(owner, observer)
+    }
+
+    fun moreData(owner: LifecycleOwner, observer: Observer<List<HomeMoreItem>>) {
+        this.mHomeMoreData.observe(owner, observer)
+    }
 
     fun getBanners() {
         launch {
-            val data = withContext(Dispatchers.IO) { homeRepository.getBanners("1") }
+            val data = homeRepository.getBanners("1")
             executeResponse(data, { mBanners.postValue(data.banners) }, {})
         }
     }

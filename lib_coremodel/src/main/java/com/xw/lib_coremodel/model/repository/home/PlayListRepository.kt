@@ -2,6 +2,7 @@ package com.xw.lib_coremodel.model.repository.home
 
 import android.content.Context
 import com.xw.lib_coremodel.data.AppDatabase
+import com.xw.lib_coremodel.data.AppDatabaseBuilder
 import com.xw.lib_coremodel.model.api.MusicRetrofitClient
 import com.xw.lib_coremodel.model.bean.BaseHttpResponse
 import com.xw.lib_coremodel.model.bean.home.PlayListCat
@@ -35,7 +36,7 @@ class PlayListRepository(context: Context) : BaseRepository(context) {
     }
 
     val myPLCatDao by lazy {
-        AppDatabase.getInstance(context).myPlayListCatDao()
+        AppDatabaseBuilder.getInstance(context).myPlayListCatDao()
     }
 
     fun savePlayListCat(cats: List<PlayListCat>) {

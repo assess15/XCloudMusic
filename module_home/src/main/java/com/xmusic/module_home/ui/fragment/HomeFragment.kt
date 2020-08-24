@@ -6,28 +6,30 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.ms.banner.listener.OnBannerClickListener
+import com.xmusic.module_home.R
+import com.xmusic.module_home.adapter.HomeDataAdapter
+import com.xmusic.module_home.databinding.HomeFragmentBinding
+import com.xmusic.module_home.ui.activity.PlayListActivity
+import com.xmusic.module_home.ui.activity.PlayListSquareActivity
+import com.xmusic.module_home.ui.activity.RankActivity
+import com.xmusic.module_home.ui.activity.RecdDailyActivity
 import com.xw.lib_common.base.view.fragment.BaseModelFragment
+import com.xw.lib_common.ext.fromN
+import com.xw.lib_common.ext.getColor
+import com.xw.lib_common.ext.toast
 import com.xw.lib_common.utils.CustomBannerViewHolder
+import com.xw.lib_coremodel.ext.afterLogin
 import com.xw.lib_coremodel.ext.onNetError
 import com.xw.lib_coremodel.model.bean.home.Banner
 import com.xw.lib_coremodel.model.bean.home.PlayListSimpleInfo
 import com.xw.lib_coremodel.utils.InjectorUtils
-
-import com.xmusic.module_home.R
-import com.xmusic.module_home.databinding.HomeFragmentBinding
-import com.xmusic.module_home.ui.activity.RankActivity
 import com.xw.lib_coremodel.viewmodel.home.HomeViewModel
-import com.xmusic.module_home.adapter.HomeDataAdapter
-import com.xmusic.module_home.ui.activity.PlayListActivity
-import com.ms.banner.listener.OnBannerClickListener
-import com.xw.lib_common.ext.*
-import com.xw.lib_coremodel.ext.afterLogin
-import com.xmusic.module_home.ui.activity.PlayListSquareActivity
-import com.xmusic.module_home.ui.activity.RecdDailyActivity
 import java.text.SimpleDateFormat
 import java.util.*
 
-class HomeFragment : BaseModelFragment<HomeFragmentBinding, HomeViewModel>(), View.OnClickListener,
+open class HomeFragment : BaseModelFragment<HomeFragmentBinding, HomeViewModel>(),
+    View.OnClickListener,
     SwipeRefreshLayout.OnRefreshListener, OnBannerClickListener {
 
     private var banners: List<Banner> = mutableListOf()
@@ -118,12 +120,12 @@ class HomeFragment : BaseModelFragment<HomeFragmentBinding, HomeViewModel>(), Vi
     override fun startObserve() {
         super.startObserve()
 
-        viewModel.loginUser?.observe(this, Observer {
+        viewModel.loginUser(this, Observer {
             if (isFirstInit.not())
                 loadData()
         })
 
-        viewModel.mBanners.observe(this, Observer {
+        viewModel.banner(this, Observer {
             bindingView.refreshLayout.isRefreshing = false
             it?.let {
                 banners = it
@@ -131,7 +133,7 @@ class HomeFragment : BaseModelFragment<HomeFragmentBinding, HomeViewModel>(), Vi
             }
         })
 
-        viewModel.mHomeMoreData.observe(this, Observer {
+        viewModel.moreData(this, Observer {
             it?.let {
                 homeDataAdapter.submitList(it)
             }
@@ -142,17 +144,17 @@ class HomeFragment : BaseModelFragment<HomeFragmentBinding, HomeViewModel>(), Vi
         val banner = banners[position]
         when (banner.targetType) {
             1 -> { // 歌曲
-                toast(context!!, banner.song!!.name)
+                toast(requireContext(), banner.song!!.name)
             }
             3000 -> { //网页
-                toast(context!!, banner.url!!)
+                toast(requireContext(), banner.url!!)
             }
             10 -> {  //专辑
-                toast(context!!, banner.targetId)
+                toast(requireContext(), banner.targetId)
             }
             1000 -> {  //歌单
                 PlayListActivity.lunch(
-                    context!!,
+                    requireContext(),
                     PlayListSimpleInfo(banner.targetId, picUrl = "")
                 )
             }

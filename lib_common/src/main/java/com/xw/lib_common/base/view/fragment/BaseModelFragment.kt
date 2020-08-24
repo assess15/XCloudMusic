@@ -29,7 +29,7 @@ abstract class BaseModelFragment<VB : ViewDataBinding, VM : BaseViewModel> : Bas
     }
     open fun startObserve() {
         viewModel?.apply {
-            mException.observe(this@BaseModelFragment, Observer { onError(it) })
+            mException.observe(viewLifecycleOwner, Observer { onError(it) })
         }
     }
 
