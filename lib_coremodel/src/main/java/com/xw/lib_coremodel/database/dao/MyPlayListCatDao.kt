@@ -2,7 +2,7 @@ package com.xw.lib_coremodel.database.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.xw.lib_coremodel.model.bean.home.PlayListCat
+import com.xw.lib_coremodel.database.entities.PlayListCat
 
 /**
  * @author: xingwei

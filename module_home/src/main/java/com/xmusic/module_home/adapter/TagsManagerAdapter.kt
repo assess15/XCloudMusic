@@ -16,7 +16,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.xw.lib_common.ext.*
-import com.xw.lib_coremodel.model.bean.home.PlayListCat
 import com.xw.lib_coremodel.model.bean.home.TagsEntry
 import com.xmusic.module_home.R
 import com.xmusic.module_home.callback.OnDragVHListener
@@ -25,6 +24,7 @@ import com.xmusic.module_home.databinding.ItemMyTagHeaderBinding
 import com.xmusic.module_home.utils.TagGridLayoutManager
 import com.xmusic.module_home.databinding.ItemMyTagBinding
 import com.xmusic.module_home.databinding.ItemOtherTagHeaderBinding
+import com.xw.lib_coremodel.database.entities.PlayListCat
 import java.util.*
 
 /**

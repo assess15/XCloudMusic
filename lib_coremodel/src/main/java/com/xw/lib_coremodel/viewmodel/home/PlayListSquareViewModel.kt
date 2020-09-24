@@ -1,6 +1,6 @@
 package com.xw.lib_coremodel.viewmodel.home
 
-import com.xw.lib_coremodel.model.bean.home.PlayListCat
+import com.xw.lib_coremodel.database.entities.PlayListCat
 import com.xw.lib_coremodel.model.repository.home.PlayListRepository
 import com.xw.lib_coremodel.viewmodel.BaseViewModel
 import kotlinx.coroutines.Dispatchers

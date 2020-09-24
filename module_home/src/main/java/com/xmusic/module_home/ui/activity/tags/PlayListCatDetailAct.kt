@@ -2,14 +2,11 @@ package com.xmusic.module_home.ui.activity.tags
 
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
-import androidx.core.content.ContextCompat
-import com.xw.lib_common.base.view.activity.BaseBindingActivity
-import com.xw.lib_common.utils.StatusBarUtil
-import com.xw.lib_coremodel.model.bean.home.PlayListCat
 import com.xmusic.module_home.R
 import com.xmusic.module_home.databinding.ActivityPlaylistCatDetailBinding
 import com.xmusic.module_home.ui.fragment.PlayListSquareFragment
+import com.xw.lib_common.base.view.activity.BaseBindingActivity
+import com.xw.lib_coremodel.database.entities.PlayListCat
 
 /**
  * @author: xingwei

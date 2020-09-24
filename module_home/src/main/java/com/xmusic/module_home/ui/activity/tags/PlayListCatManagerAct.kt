@@ -1,33 +1,28 @@
 package com.xmusic.module_home.ui.activity.tags
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
-import android.os.Bundle
 import android.view.ViewGroup
 import androidx.activity.viewModels
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
+import com.xmusic.module_home.R
+import com.xmusic.module_home.adapter.TagsManagerAdapter
+import com.xmusic.module_home.callback.ItemDragHelperCallback
+import com.xmusic.module_home.databinding.ActivityPlayListCatManagerBinding
+import com.xmusic.module_home.utils.TagGridLayoutManager
+import com.xmusic.module_home.utils.TagItemDecoration
 import com.xw.lib_common.base.view.activity.BaseActivity
 import com.xw.lib_common.ext.dip2px
 import com.xw.lib_common.ext.no
-import com.xw.lib_common.ext.toast
 import com.xw.lib_common.ext.yes
-import com.xw.lib_common.utils.StatusBarUtil
-import com.xw.lib_coremodel.model.bean.home.PlayListCat
+import com.xw.lib_coremodel.database.entities.PlayListCat
 import com.xw.lib_coremodel.model.bean.home.TagsEntry
 import com.xw.lib_coremodel.utils.ACache
 import com.xw.lib_coremodel.utils.DataHolder
 import com.xw.lib_coremodel.utils.InjectorUtils
 import com.xw.lib_coremodel.viewmodel.home.PlayListTagsViewModel
-import com.xmusic.module_home.R
-import com.xmusic.module_home.adapter.TagsManagerAdapter
-import com.xmusic.module_home.callback.ItemDragHelperCallback
-import com.xmusic.module_home.utils.TagGridLayoutManager
-import com.xmusic.module_home.utils.TagItemDecoration
-import com.xmusic.module_home.databinding.ActivityPlayListCatManagerBinding
 import kotlinx.android.synthetic.main.activity_play_list_cat_manager.*
 
 class PlayListCatManagerAct :
@@ -126,7 +121,7 @@ class PlayListCatManagerAct :
     companion object {
         const val MY_TAGS = "MY_TAGS"
         private const val CACHE_DATA = "cache_data"
-         const val REQUEST_CODE_CLICK_MY_TAG = 0x001
+        const val REQUEST_CODE_CLICK_MY_TAG = 0x001
         fun launch(context: Activity, myTags: MutableList<PlayListCat>) = context.apply {
             val intent = Intent(this, PlayListCatManagerAct::class.java)
             DataHolder.getInstance().setData(MY_TAGS, myTags)

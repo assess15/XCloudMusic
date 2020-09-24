@@ -1,5 +1,6 @@
 package com.xw.lib_coremodel.model.bean.home
 
+import com.xw.lib_coremodel.database.entities.PlayListCat
 import java.io.Serializable
 
 /**

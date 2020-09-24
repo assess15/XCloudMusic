@@ -12,7 +12,6 @@ import com.xw.lib_common.base.view.fragment.BaseModelFragment
 import com.xw.lib_common.ext.adapterDataChangeObserver
 import com.xw.lib_common.ext.dip2px
 import com.xw.lib_common.utils.GridItemDecoration
-import com.xw.lib_coremodel.model.bean.home.PlayListCat
 import com.xw.lib_coremodel.utils.DataHolder
 import com.xw.lib_coremodel.utils.InjectorUtils
 import com.xw.lib_coremodel.viewmodel.home.PlayListFragmentViewModel
@@ -21,6 +20,7 @@ import com.xmusic.module_home.adapter.PlayListSquareAdapter
 import com.xmusic.module_home.databinding.FragmentPlayListBinding
 import com.xmusic.module_home.ui.activity.PlayListActivity
 import com.xmusic.module_home.ui.activity.PlayListSquareActivity
+import com.xw.lib_coremodel.database.entities.PlayListCat
 import kotlinx.android.synthetic.main.fragment_play_list.*
 import java.util.concurrent.Executors
 

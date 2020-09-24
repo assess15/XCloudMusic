@@ -2,9 +2,9 @@ package com.xw.lib_coremodel.model.repository.home
 
 import android.content.Context
 import com.xw.lib_coremodel.database.AppDatabaseBuilder
+import com.xw.lib_coremodel.database.entities.PlayListCat
 import com.xw.lib_coremodel.model.api.MusicRetrofitClient
 import com.xw.lib_coremodel.model.bean.BaseHttpResponse
-import com.xw.lib_coremodel.model.bean.home.PlayListCat
 import com.xw.lib_coremodel.model.bean.home.PlayListData
 import com.xw.lib_coremodel.model.bean.home.PlayListHotResponse
 import com.xw.lib_coremodel.model.bean.home.SongDetailResponse

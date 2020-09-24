@@ -1,11 +1,11 @@
 package com.xw.lib_coremodel.viewmodel.home
 
 import androidx.lifecycle.MutableLiveData
-import com.xw.lib_coremodel.model.bean.home.PlayListCat
 import com.xw.lib_coremodel.model.repository.home.PlayListFragmentRepository
 import com.xw.lib_coremodel.viewmodel.BaseViewModel
 import androidx.lifecycle.Transformations.map
 import androidx.lifecycle.Transformations.switchMap
+import com.xw.lib_coremodel.database.entities.PlayListCat
 
 /**
  * @author: xingwei
