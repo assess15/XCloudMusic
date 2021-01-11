@@ -64,6 +64,16 @@ fun EditText.onTextChanged(onTextChanged: (String) -> Unit) {
     })
 }
 
+fun EditText.onEditorActionListener(actionId: Int, call: () -> Unit) {
+    this.setOnEditorActionListener { v, id, event ->
+        if (id == actionId) {
+            call.invoke()
+            return@setOnEditorActionListener true
+        }
+        return@setOnEditorActionListener false
+    }
+}
+
 fun RecyclerView.addOnScrollStateChanged(onScrollStateChanged: (RecyclerView, Int) -> Unit) {
     this.addOnScrollListener(object : RecyclerView.OnScrollListener() {
         override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {

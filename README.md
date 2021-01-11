@@ -13,6 +13,9 @@
   - 文档
 - *WorkManager*
 
+### 项目中未使用 koin / Hilt
+待改进
+
 ### Jetpack + MVVM 架构
 
 ![官方架构](./png/final_architecture.png)

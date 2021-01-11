@@ -25,8 +25,7 @@ class VerifyCodeFragment : LoginBaseFragment<FragmentVerifyCodeBinding>(),
 
     private var timer: MyCountDownTimer? = null
 
-    override val layoutId: Int
-        get() = R.layout.fragment_verify_code
+    override val layoutId: Int = R.layout.fragment_verify_code
 
     override fun initView() {
         verifyCodeView.setOnVerificationCodeChangedListener(this)

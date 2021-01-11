@@ -20,10 +20,7 @@ import com.xmusic.module_search.databinding.ActivitySerchBinding
 import com.xmusic.module_search.ui.fragment.HotSearchFragment
 import com.xmusic.module_search.ui.fragment.SearchResultFragment
 import com.xw.lib_common.base.view.activity.BaseActivity
-import com.xw.lib_common.ext.dip2px
-import com.xw.lib_common.ext.getColorExt
-import com.xw.lib_common.ext.hideSoftInput
-import com.xw.lib_common.ext.onTextChanged
+import com.xw.lib_common.ext.*
 import com.xw.lib_common.utils.LinearItemDecoration
 import com.xw.lib_coremodel.provider.RouterPath
 import com.xw.lib_coremodel.utils.InjectorUtils
@@ -69,15 +66,21 @@ class SearchActivity : BaseActivity<ActivitySerchBinding, SearchViewModel>() {
                 popupWindow?.dismiss()
             }
         }
-        searchEt.setOnEditorActionListener { _, actionId, _ ->
-            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                if (searchEt.text.isNullOrEmpty()) {
-                    searchEt.setText(viewModel.defaultSearch.value?.realkeyword)
-                }
-                search(searchEt.text.toString().trim())
-                return@setOnEditorActionListener true
+//        searchEt.setOnEditorActionListener { _, actionId, _ ->
+//            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+//                if (searchEt.text.isNullOrEmpty()) {
+//                    searchEt.setText(viewModel.defaultSearch.value?.realkeyword)
+//                }
+//                search(searchEt.text.toString().trim())
+//                return@setOnEditorActionListener true
+//            }
+//            return@setOnEditorActionListener false
+//        }
+        searchEt.onEditorActionListener(EditorInfo.IME_ACTION_SEARCH) {
+            if (searchEt.text.isNullOrEmpty()) {
+                searchEt.setText(viewModel.defaultSearch.value?.realkeyword)
             }
-            return@setOnEditorActionListener false
+            search(searchEt.text.toString().trim())
         }
         searchEt.setOnFocusChangeListener { _, hasFocus ->
             if (hasFocus && searchEt.text.toString().isNotEmpty() && needRequestSuggest) {
